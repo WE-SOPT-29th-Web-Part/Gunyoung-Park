@@ -1,0 +1,106 @@
+:root {
+  --back-color: #89dcd4;
+  --primary: rgb(9, 211, 194);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.title {
+  background-color: var(--back-color);
+  text-align: center;
+  height: 4em;
+}
+
+.title__text {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  margin: 1em 0;
+}
+
+.navbar__item {
+  display: inline-block;
+  padding: 0.3em 0.5em;
+  background-color: var(--primary);
+  border: 0;
+}
+
+.navbar__item:hover {
+  background-color: var(--primary);
+}
+
+.navbar__item:not(:last-child) {
+  margin-right: 0.3em;
+}
+
+.container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+}
+
+.todos {
+  padding: 1em 2em;
+  border: 1px solid black;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.todos__list {
+  flex-grow: 1;
+}
+
+.todos__item {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todos__item:not(:last-child) {
+  border-bottom: 1px solid gray;
+}
+
+.todos__item button {
+  height: 2em;
+  width: 2em;
+}
+
+.todos__controls {
+  display: flex;
+  flex-direction: row;
+}
+
+.todos__textfield {
+  height: 2em;
+  border: 1px solid gray;
+  border-right: none;
+  display: block;
+  flex-grow: 1;
+}
+
+.todos__commit {
+  width: 4em;
+  height: 2em;
+}
+
+.footer {
+  background-color: var(--back-color);
+}
