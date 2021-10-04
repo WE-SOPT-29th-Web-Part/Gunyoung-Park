@@ -1,6 +1,18 @@
 :root {
-  --back-color: #89dcd4;
-  --primary: rgb(9, 211, 194);
+  --primary: #6200ee;
+  --primary-variant: #3700b3;
+  --on-primary: white;
+  --secondary: #03dac6;
+  --secondary-variant: #018786;
+  --secondary-light: #70efde;
+  --on-secondary: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 body {
@@ -9,14 +21,19 @@ body {
   flex-direction: column;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+h1 {
+  font-size: 2em;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.7em;
+  font-weight: 500;
 }
 
 .title {
-  background-color: var(--back-color);
+  background-color: var(--primary);
+  color: var(--on-primary);
   text-align: center;
   height: 4em;
 }
@@ -36,12 +53,17 @@ body {
 .navbar__item {
   display: inline-block;
   padding: 0.3em 0.5em;
-  background-color: var(--primary);
-  border: 0;
+  background-color: var(--secondary);
+  color: var(--on-secondary);
+  border: none;
 }
 
 .navbar__item:hover {
-  background-color: var(--primary);
+  background-color: var(--secondary-light);
+}
+
+.navbar__item:active {
+  background-color: var(--secondary-variant);
 }
 
 .navbar__item:not(:last-child) {
@@ -64,23 +86,40 @@ body {
   flex-direction: column;
 }
 
+.todos__header {
+}
+
 .todos__list {
   flex-grow: 1;
+  margin-top: 1em;
 }
 
 .todos__item {
   list-style: none;
   display: flex;
   justify-content: space-between;
+  padding: 1em 0.5em;
 }
 
 .todos__item:not(:last-child) {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px dashed lightgray;
 }
 
 .todos__item button {
-  height: 2em;
-  width: 2em;
+  height: 2.5em;
+  width: 2.5em;
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.todos__item button:hover {
+  background-color: rgb(236, 236, 236);
+}
+
+.todos__item button:active {
+  background-color: lightgray;
 }
 
 .todos__controls {
@@ -90,7 +129,9 @@ body {
 
 .todos__textfield {
   height: 2em;
+  padding: 0 0.5em;
   border: 1px solid gray;
+  border-radius: 5px 0 0 5px;
   border-right: none;
   display: block;
   flex-grow: 1;
@@ -99,8 +140,22 @@ body {
 .todos__commit {
   width: 4em;
   height: 2em;
+  background-color: var(--secondary);
+  border: 1px solid gray;
+  border-radius: 0 5px 5px 0;
+}
+
+.todos__commit:hover {
+  background-color: var(--secondary-light);
+}
+
+.todos__commit:active {
+  background-color: var(--secondary-variant);
 }
 
 .footer {
-  background-color: var(--back-color);
+  background-color: var(--primary);
+  color: var(--on-primary);
+  text-align: center;
+  padding: 0.3em 0;
 }
