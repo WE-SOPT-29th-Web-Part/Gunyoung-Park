@@ -4,7 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Velog Clone</title>
+    <title>velog clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
@@ -33,9 +39,19 @@
       </div>
     </nav>
     <nav class="nav">
-      <a>트렌딩</a>
-      <a>최신</a>
-      <button>이번 주</button>
+      <div class="nav-tabs">
+        <a class="nav-button active">
+          <span class="material-icons"> trending_up </span>트렌딩
+        </a>
+        <a class="nav-button">
+          <span class="material-icons"> schedule </span>최신
+        </a>
+        <a class="nav-dropdown">
+          이번 주
+          <span class="material-icons">arrow_drop_down</span>
+        </a>
+      </div>
+      <span class="material-icons"> more_vert </span>
     </nav>
     <main class="container">
       <section class="card">
@@ -43,14 +59,148 @@
           src="https://media.vlpt.us/images/koremp/post/41cec128-5eca-4bba-9de8-74852fe1b224/ar.jpg?w=640"
         />
         <article>
-          <h3>주니어 프론트엔드 개발자 면접 20개 광</h3>
+          <h3><a href="#">주니어 프론트엔드 개발자 면접 20개 광탈</a></h3>
           <p>회사 20개 면접 광탈 이후 지금까지의 과정, 60초 후에 공개됩니다!</p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
         </article>
         <footer>
           <div class="card-footer-author">
-            by <span class="card-footer-author-text">Tekiter</span>
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
           </div>
-          <div class="card-footer-like">51</div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/vonvoyage27/post/9f17fd6f-db42-47c1-93b0-143128f61138/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-08-25%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2011.15.03.png?w=640"
+        />
+        <article>
+          <h3>포트폴리오 6주 만에 준비 방법(Ver.2)</h3>
+          <p>
+            IT 회사에 개발자로 취업을 하려면 개발에 대한 지식 / 경력 / 실력이
+            필요합니다. 경력이 없는 신입(~3년 차)에게 회사가 지식과 경력
+          </p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/sosoyim/post/21c96130-9f9c-4485-8293-6f3478f20d23/pexels-ann-h-1888015.jpg?w=640"
+        />
+        <article>
+          <h3>신입 개발자가 알면 좋은 개발 외적인 개념</h3>
+          <p>
+            입사 전에 알고 오시면 회사 적응이 빨라질 3가지 개념을 간단히
+            목록으로 만들었습니다. 이슈, 협업 도구, 질문 에 대해 다룹니다.
+          </p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/haero_kim/post/83c6bb3d-684e-4be4-9a23-8d85f7660c5b/image%20(1).png?w=640"
+        />
+        <article>
+          <h3>이진 탐색 트리 (Binary Search Tree)</h3>
+          <p>BST 의 특징, 연산 시간 복잡도 알아보기</p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/jkpark104/post/5dcedbfc-711d-424d-9002-146df123a0e8/thumbnail.png?w=640"
+        />
+        <article>
+          <h3>JS의 객체지향 프로그래밍</h3>
+          <p>BST 의 특징, 연산 시간 복잡도 알아보기</p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/haero_kim/post/83c6bb3d-684e-4be4-9a23-8d85f7660c5b/image%20(1).png?w=640"
+        />
+        <article>
+          <h3>이진 탐색 트리 (Binary Search Tree)</h3>
+          <p>BST 의 특징, 연산 시간 복잡도 알아보기</p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/vonvoyage27/post/9f17fd6f-db42-47c1-93b0-143128f61138/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-08-25%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2011.15.03.png?w=640"
+        />
+        <article>
+          <h3>포트폴리오 6주 만에 준비 방법(Ver.2)</h3>
+          <p>
+            IT 회사에 개발자로 취업을 하려면 개발에 대한 지식 / 경력 / 실력이
+            필요합니다. 경력이 없는 신입(~3년 차)에게 회사가 지식과 경력
+          </p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
         </footer>
       </section>
       <section class="card">
@@ -58,40 +208,467 @@
           src="https://media.vlpt.us/images/koremp/post/41cec128-5eca-4bba-9de8-74852fe1b224/ar.jpg?w=640"
         />
         <article>
-          <h3>주니어 프론트엔드 개발자 면접 20개 광</h3>
+          <h3>주니어 프론트엔드 개발자 면접 20개 광탈</h3>
           <p>회사 20개 면접 광탈 이후 지금까지의 과정, 60초 후에 공개됩니다!</p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
         </article>
-        <footer></footer>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/vonvoyage27/post/9f17fd6f-db42-47c1-93b0-143128f61138/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-08-25%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2011.15.03.png?w=640"
+        />
+        <article>
+          <h3>포트폴리오 6주 만에 준비 방법(Ver.2)</h3>
+          <p>
+            IT 회사에 개발자로 취업을 하려면 개발에 대한 지식 / 경력 / 실력이
+            필요합니다. 경력이 없는 신입(~3년 차)에게 회사가 지식과 경력
+          </p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/sosoyim/post/21c96130-9f9c-4485-8293-6f3478f20d23/pexels-ann-h-1888015.jpg?w=640"
+        />
+        <article>
+          <h3>신입 개발자가 알면 좋은 개발 외적인 개념</h3>
+          <p>
+            입사 전에 알고 오시면 회사 적응이 빨라질 3가지 개념을 간단히
+            목록으로 만들었습니다. 이슈, 협업 도구, 질문 에 대해 다룹니다.
+          </p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/haero_kim/post/83c6bb3d-684e-4be4-9a23-8d85f7660c5b/image%20(1).png?w=640"
+        />
+        <article>
+          <h3>이진 탐색 트리 (Binary Search Tree)</h3>
+          <p>BST 의 특징, 연산 시간 복잡도 알아보기</p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/jkpark104/post/5dcedbfc-711d-424d-9002-146df123a0e8/thumbnail.png?w=640"
+        />
+        <article>
+          <h3>JS의 객체지향 프로그래밍</h3>
+          <p>BST 의 특징, 연산 시간 복잡도 알아보기</p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/haero_kim/post/83c6bb3d-684e-4be4-9a23-8d85f7660c5b/image%20(1).png?w=640"
+        />
+        <article>
+          <h3>이진 탐색 트리 (Binary Search Tree)</h3>
+          <p>BST 의 특징, 연산 시간 복잡도 알아보기</p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/vonvoyage27/post/9f17fd6f-db42-47c1-93b0-143128f61138/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-08-25%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2011.15.03.png?w=640"
+        />
+        <article>
+          <h3>포트폴리오 6주 만에 준비 방법(Ver.2)</h3>
+          <p>
+            IT 회사에 개발자로 취업을 하려면 개발에 대한 지식 / 경력 / 실력이
+            필요합니다. 경력이 없는 신입(~3년 차)에게 회사가 지식과 경력
+          </p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
       </section>
       <section class="card">
         <img
           src="https://media.vlpt.us/images/koremp/post/41cec128-5eca-4bba-9de8-74852fe1b224/ar.jpg?w=640"
         />
         <article>
-          <h3>주니어 프론트엔드 개발자 면접 20개 광</h3>
+          <h3>주니어 프론트엔드 개발자 면접 20개 광탈</h3>
           <p>회사 20개 면접 광탈 이후 지금까지의 과정, 60초 후에 공개됩니다!</p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
         </article>
-        <footer></footer>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/vonvoyage27/post/9f17fd6f-db42-47c1-93b0-143128f61138/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-08-25%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2011.15.03.png?w=640"
+        />
+        <article>
+          <h3>포트폴리오 6주 만에 준비 방법(Ver.2)</h3>
+          <p>
+            IT 회사에 개발자로 취업을 하려면 개발에 대한 지식 / 경력 / 실력이
+            필요합니다. 경력이 없는 신입(~3년 차)에게 회사가 지식과 경력
+          </p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/sosoyim/post/21c96130-9f9c-4485-8293-6f3478f20d23/pexels-ann-h-1888015.jpg?w=640"
+        />
+        <article>
+          <h3>신입 개발자가 알면 좋은 개발 외적인 개념</h3>
+          <p>
+            입사 전에 알고 오시면 회사 적응이 빨라질 3가지 개념을 간단히
+            목록으로 만들었습니다. 이슈, 협업 도구, 질문 에 대해 다룹니다.
+          </p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/haero_kim/post/83c6bb3d-684e-4be4-9a23-8d85f7660c5b/image%20(1).png?w=640"
+        />
+        <article>
+          <h3>이진 탐색 트리 (Binary Search Tree)</h3>
+          <p>BST 의 특징, 연산 시간 복잡도 알아보기</p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/jkpark104/post/5dcedbfc-711d-424d-9002-146df123a0e8/thumbnail.png?w=640"
+        />
+        <article>
+          <h3>JS의 객체지향 프로그래밍</h3>
+          <p>BST 의 특징, 연산 시간 복잡도 알아보기</p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/haero_kim/post/83c6bb3d-684e-4be4-9a23-8d85f7660c5b/image%20(1).png?w=640"
+        />
+        <article>
+          <h3>이진 탐색 트리 (Binary Search Tree)</h3>
+          <p>BST 의 특징, 연산 시간 복잡도 알아보기</p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/vonvoyage27/post/9f17fd6f-db42-47c1-93b0-143128f61138/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-08-25%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2011.15.03.png?w=640"
+        />
+        <article>
+          <h3>포트폴리오 6주 만에 준비 방법(Ver.2)</h3>
+          <p>
+            IT 회사에 개발자로 취업을 하려면 개발에 대한 지식 / 경력 / 실력이
+            필요합니다. 경력이 없는 신입(~3년 차)에게 회사가 지식과 경력
+          </p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
       </section>
       <section class="card">
         <img
           src="https://media.vlpt.us/images/koremp/post/41cec128-5eca-4bba-9de8-74852fe1b224/ar.jpg?w=640"
         />
         <article>
-          <h3>주니어 프론트엔드 개발자 면접 20개 광</h3>
+          <h3>주니어 프론트엔드 개발자 면접 20개 광탈</h3>
           <p>회사 20개 면접 광탈 이후 지금까지의 과정, 60초 후에 공개됩니다!</p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
         </article>
-        <footer></footer>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/vonvoyage27/post/9f17fd6f-db42-47c1-93b0-143128f61138/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-08-25%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2011.15.03.png?w=640"
+        />
+        <article>
+          <h3>포트폴리오 6주 만에 준비 방법(Ver.2)</h3>
+          <p>
+            IT 회사에 개발자로 취업을 하려면 개발에 대한 지식 / 경력 / 실력이
+            필요합니다. 경력이 없는 신입(~3년 차)에게 회사가 지식과 경력
+          </p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/sosoyim/post/21c96130-9f9c-4485-8293-6f3478f20d23/pexels-ann-h-1888015.jpg?w=640"
+        />
+        <article>
+          <h3>신입 개발자가 알면 좋은 개발 외적인 개념</h3>
+          <p>
+            입사 전에 알고 오시면 회사 적응이 빨라질 3가지 개념을 간단히
+            목록으로 만들었습니다. 이슈, 협업 도구, 질문 에 대해 다룹니다.
+          </p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/haero_kim/post/83c6bb3d-684e-4be4-9a23-8d85f7660c5b/image%20(1).png?w=640"
+        />
+        <article>
+          <h3>이진 탐색 트리 (Binary Search Tree)</h3>
+          <p>BST 의 특징, 연산 시간 복잡도 알아보기</p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/jkpark104/post/5dcedbfc-711d-424d-9002-146df123a0e8/thumbnail.png?w=640"
+        />
+        <article>
+          <h3>JS의 객체지향 프로그래밍</h3>
+          <p>BST 의 특징, 연산 시간 복잡도 알아보기</p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/haero_kim/post/83c6bb3d-684e-4be4-9a23-8d85f7660c5b/image%20(1).png?w=640"
+        />
+        <article>
+          <h3>이진 탐색 트리 (Binary Search Tree)</h3>
+          <p>BST 의 특징, 연산 시간 복잡도 알아보기</p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
+      </section>
+      <section class="card">
+        <img
+          src="https://media.vlpt.us/images/vonvoyage27/post/9f17fd6f-db42-47c1-93b0-143128f61138/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-08-25%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2011.15.03.png?w=640"
+        />
+        <article>
+          <h3>포트폴리오 6주 만에 준비 방법(Ver.2)</h3>
+          <p>
+            IT 회사에 개발자로 취업을 하려면 개발에 대한 지식 / 경력 / 실력이
+            필요합니다. 경력이 없는 신입(~3년 차)에게 회사가 지식과 경력
+          </p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
+        </article>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
       </section>
       <section class="card">
         <img
           src="https://media.vlpt.us/images/koremp/post/41cec128-5eca-4bba-9de8-74852fe1b224/ar.jpg?w=640"
         />
         <article>
-          <h3>주니어 프론트엔드 개발자 면접 20개 광</h3>
+          <h3>주니어 프론트엔드 개발자 면접 20개 광탈</h3>
           <p>회사 20개 면접 광탈 이후 지금까지의 과정, 60초 후에 공개됩니다!</p>
+          <footer>2021년 9월 27일 · 9개의 댓글</footer>
         </article>
-        <footer></footer>
+        <footer>
+          <div class="card-footer-author">
+            <img src="./resources/person.png" /> by
+            <span class="card-footer-author-text">Tekiter</span>
+          </div>
+          <div class="card-footer-like">
+            <span class="material-icons"> favorite </span>
+            51
+          </div>
+        </footer>
       </section>
     </main>
   </body>

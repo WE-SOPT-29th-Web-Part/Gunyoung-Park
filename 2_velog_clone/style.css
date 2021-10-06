@@ -1,5 +1,5 @@
 :root {
-  --desktop-width: 1350px;
+  --desktop-width: 1728px;
 }
 
 * {
@@ -14,6 +14,11 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", "Noto Sans KR",
     "맑은 고딕", sans-serif;
   font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .text-bold {
@@ -37,9 +42,9 @@ body {
 .navbar-title {
   font-size: 1.5em;
 
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  font-family: "Source Code Pro", monospace;
+  font-weight: 600;
+  transform: translateY(-20%);
 }
 
 .navbar-controls {
@@ -79,6 +84,7 @@ body {
   background-color: transparent;
   font-size: 1em;
   border: none;
+  border-radius: 50%;
 
   color: gray;
 }
@@ -92,8 +98,55 @@ body {
 }
 
 .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: var(--desktop-width);
   margin: 0 auto;
+
+  color: gray;
+  margin-bottom: 2px solid transparent;
+}
+
+.nav-tabs {
+  display: flex;
+}
+
+.nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav a > .material-icons {
+  margin-right: 0.3em;
+}
+
+.nav-button {
+  width: 6em;
+  font-size: 1.2em;
+  padding: 0.3em 0.6em;
+}
+
+.nav-button.active {
+  border-bottom: 2px solid black;
+  color: black !important;
+
+  font-weight: 500;
+}
+
+.nav-dropdown {
+  display: flex;
+  align-items: center;
+
+  border: none;
+  background-color: transparent;
+  color: black;
+  font-size: 0.9em;
+}
+
+.nav-dropdown .material-icons {
+  margin-left: 0.4em;
 }
 
 .container {
@@ -102,7 +155,7 @@ body {
   flex-wrap: wrap;
 
   width: var(--desktop-width);
-  margin: 0 auto;
+  margin: 2em auto 0 auto;
 }
 
 .container > section {
@@ -120,22 +173,42 @@ body {
   width: 100%;
   height: 10em;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .card > article {
   font-size: 0.85em;
   padding: 0.5em 1em 1em 1em;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 12em;
 }
 
 .card > article > h3,
 card-title {
   font-size: 1.2em;
   font-weight: 500;
-  margin-bottom: 0.4em;
+  margin-bottom: 0.3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
 .card > article > p {
   color: grey;
+  flex-grow: 1;
+  width: 100%;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.card > article > footer {
+  color: rgb(161, 161, 161);
+  font-size: 0.9em;
+  font-weight: 400;
 }
 
 .card > footer {
@@ -146,15 +219,32 @@ card-title {
 }
 
 .card-footer-author {
+  display: flex;
+  align-items: center;
+
   font-size: 0.9em;
   color: gray;
+}
+
+.card-footer-author img {
+  border-radius: 50%;
+  height: 1.5em;
+  margin-right: 0.3em;
 }
 
 .card-footer-author-text {
   color: black !important;
   font-weight: 600;
+  margin-left: 0.3em;
 }
 
 .card-footer-like {
-  font-size: 0.9em;
+  font-size: 0.85em;
+  display: flex;
+  align-items: center;
+}
+
+.card-footer-like .material-icons {
+  font-size: 1em;
+  margin-right: 0.5em;
 }
