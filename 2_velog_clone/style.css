@@ -1,5 +1,55 @@
 :root {
-  --desktop-width: 1728px;
+  --full-width: 1728px;
+  --desktop-width: 1370px;
+  --laptop-width: 1040px;
+  --tablet-width: 98%;
+  --mobile-width: 98%;
+}
+
+@media screen {
+  :root {
+    --content-width: var(--full-width);
+  }
+}
+
+@media screen and (max-width: 1919px) {
+  :root {
+    --content-width: var(--desktop-width);
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  :root {
+    --content-width: var(--laptop-width);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --content-width: var(--tablet-width);
+  }
+
+  .card.card {
+    width: 49%;
+  }
+
+  .hide-on-mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  :root {
+    --content-width: var(--mobile-width);
+  }
+
+  .card.card {
+    width: 98%;
+  }
+
+  .hide-on-mobile {
+    display: none;
+  }
 }
 
 * {
@@ -44,7 +94,7 @@ a {
 }
 
 .navbar-lg {
-  width: var(--desktop-width);
+  width: var(--content-width);
 }
 
 .navbar-title {
@@ -57,6 +107,7 @@ a {
 
 .navbar-controls {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -109,7 +160,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: var(--desktop-width);
+  width: var(--content-width);
   margin: 0 auto;
 
   color: gray;
@@ -165,7 +216,7 @@ a {
   justify-content: space-between;
   flex-wrap: wrap;
 
-  width: var(--desktop-width);
+  width: var(--content-width);
   margin: 2em auto 0 auto;
 }
 
