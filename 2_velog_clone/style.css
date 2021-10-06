@@ -134,6 +134,13 @@ a {
   background-color: white;
   height: 2em;
   padding: 0em 1em;
+
+  transition: all 0.125s ease-in 0s;
+}
+
+.navbar-button:hover {
+  background-color: rgb(43, 43, 61);
+  color: white;
 }
 
 .navbar-profile {
@@ -168,6 +175,7 @@ a {
 
 .nav-tabs {
   display: flex;
+  align-items: center;
 }
 
 .nav a {
@@ -197,10 +205,14 @@ a {
   display: flex;
   align-items: center;
 
-  border: none;
-  background-color: transparent;
+  border: 1px solid rgb(245, 245, 245);
+  background-color: white;
   color: black;
   font-size: 0.9em;
+
+  border-radius: 5px;
+  padding: 0.3em 0.7em;
+  height: fit-content;
 }
 
 .nav-dropdown:hover {
@@ -229,6 +241,12 @@ a {
   box-shadow: rgb(0 0 0 / 4%) 0px 4px 16px 0px;
   background: white;
   border-radius: 4px;
+  transform: translateY(0);
+  transition: all 0.2s ease-in 0s;
+}
+
+.card:hover {
+  transform: translateY(-2%);
 }
 
 .card > img {
