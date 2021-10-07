@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="title">
+      <h1 class="title__text">Todo List</h1>
+    </header>
+
+    <nav class="navbar">
+      <button class="navbar__item">오늘만 보기</button>
+      <button class="navbar__item">내일만 보기</button>
+      <button class="navbar__item">함께 보기</button>
+    </nav>
+
+    <main class="container">
+      <section class="todos">
+        <header class="todos__header">
+          <h2>오늘 할 일</h2>
+        </header>
+        <ul class="todos__list">
+          <li class="todos__item">
+            공부하기<button>
+              <span class="material-icons">&#xe872;</span>
+            </button>
+          </li>
+          <li class="todos__item">
+            과제하기<button>
+              <span class="material-icons">&#xe872;</span>
+            </button>
+          </li>
+          <li class="todos__item">
+            일찍자기<button>
+              <span class="material-icons">&#xe872;</span>
+            </button>
+          </li>
+        </ul>
+        <footer class="todos__controls">
+          <input type="text" class="todos__textfield" />
+          <button class="todos__commit">
+            <span class="material-icons">&#xe145;</span>
+          </button>
+        </footer>
+      </section>
+
+      <section class="todos">
+        <header class="todos__header">
+          <h2>내일 할 일</h2>
+        </header>
+        <ul class="todos__list">
+          <li class="todos__item">
+            신나게 놀기<button>
+              <span class="material-icons">&#xe872;</span>
+            </button>
+          </li>
+          <li class="todos__item">
+            공부하기<button>
+              <span class="material-icons">&#xe872;</span>
+            </button>
+          </li>
+        </ul>
+        <footer class="todos__controls">
+          <input type="text" class="todos__textfield" />
+          <button class="todos__commit">
+            <span class="material-icons">&#xe145;</span>
+          </button>
+        </footer>
+      </section>
+    </main>
+
+    <footer class="footer">Copyright © Tekiter</footer>
+  </body>
+</html>
