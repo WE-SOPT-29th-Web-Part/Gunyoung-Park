@@ -31,6 +31,13 @@ h2 {
   font-weight: 500;
 }
 
+.hidden.hidden {
+  width: 0;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .title {
   background-color: var(--primary);
   color: var(--on-primary);
@@ -84,6 +91,9 @@ h2 {
   width: 100%;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+
+  transition: width 0.3s, padding 0.3s;
 }
 
 .todos__header {
