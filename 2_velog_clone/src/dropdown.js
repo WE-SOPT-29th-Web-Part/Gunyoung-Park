@@ -34,21 +34,31 @@ export function setNavDropdown() {
       const containers = node.getElementsByClassName("nav-dropdown-content");
 
       for (const container of containers) {
+        function select(idx) {
+          const child = container.children[idx];
+          for (const child of container.children) {
+            child.classList.remove("dropdown-selected");
+          }
+          child.classList.add("dropdown-selected");
+
+          const displays = node.getElementsByClassName("dropdown-display");
+          for (const display of displays) {
+            display.textContent = child.textContent;
+          }
+        }
+
+        let cnt = 0;
         for (const child of container.children) {
+          const thisIdx = cnt;
           child.addEventListener("click", () => {
             node.toggleDropdown(false);
 
-            for (const child of container.children) {
-              child.classList.remove("dropdown-selected");
-            }
-            child.classList.add("dropdown-selected");
-
-            const displays = node.getElementsByClassName("dropdown-display");
-            for (const display of displays) {
-              display.textContent = child.textContent;
-            }
+            select(thisIdx);
           });
+          cnt++;
         }
+
+        select(0);
       }
     }
   }
