@@ -1,5 +1,6 @@
 import { generateData } from "./api.js";
 import { h } from "./dom.js";
+import { setNavDropdown } from "./dropdown.js";
 
 class ArticleCard {
   props = {
@@ -71,6 +72,7 @@ function main() {
     container: document.getElementById("article_container"),
     articleList,
   });
+  setNavDropdown();
 }
 
 window.addEventListener("load", main);
