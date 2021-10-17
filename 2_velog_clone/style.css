@@ -208,10 +208,6 @@ a {
   position: relative;
 }
 
-.dropdown-open {
-  visibility: visible !important;
-}
-
 .nav-dropdown-button {
   display: flex;
   align-items: center;
@@ -220,10 +216,24 @@ a {
   background-color: white;
   color: black;
   font-size: 0.9em;
+  min-width: 8em;
 
   border-radius: 5px;
   padding: 0.3em 0.7em;
   height: fit-content;
+}
+
+.dropdown-open {
+  visibility: visible !important;
+}
+
+.dropdown-display {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.dropdown-selected {
+  color: green;
 }
 
 .nav-dropdown-button .material-icons {
