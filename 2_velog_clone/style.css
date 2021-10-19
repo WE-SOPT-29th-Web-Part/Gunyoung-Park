@@ -130,10 +130,10 @@ a {
   border: 1px solid black;
 
   font-size: 1em;
-  font-weight: 600;
+  font-weight: 500;
   background-color: white;
   height: 2em;
-  padding: 0em 1em;
+  padding: 0.2em 1em;
 
   transition: all 0.125s ease-in 0s;
 }
