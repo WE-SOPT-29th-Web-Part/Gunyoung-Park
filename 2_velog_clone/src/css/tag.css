@@ -1,0 +1,44 @@
+.tagbox {
+  display: flex;
+  flex-wrap: wrap;
+
+  border: 1px solid gray;
+  padding: 0em 0.5em 0.3em 0.5em;
+  box-sizing: border-box;
+
+  font-size: 1.3em;
+}
+
+.tagbox-input {
+  box-sizing: border-box;
+
+  margin-top: 0.3em;
+  flex-grow: 1;
+  height: 1.5em;
+
+  border: 1px solid transparent;
+  outline: none;
+
+  font-size: inherit;
+}
+
+.tagbox-item {
+  margin-top: 0.3em;
+  margin-right: 0.3em;
+  height: 1.5em;
+  padding: 0 0.6em;
+
+  border-radius: 1em;
+  border: 1px solid transparent;
+  background-color: rgb(238, 238, 238);
+  color: rgb(101, 151, 101);
+
+  box-sizing: border-box;
+  font-size: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.tagbox-item:hover {
+  background-color: lightgray;
+}
