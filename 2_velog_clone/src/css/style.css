@@ -30,7 +30,7 @@
   }
 
   .card.card {
-    width: 49%;
+    width: 45vw;
   }
 
   .hide-on-mobile {
@@ -44,7 +44,7 @@
   }
 
   .card.card {
-    width: 98%;
+    width: 90vw;
   }
 
   .hide-on-mobile {
@@ -64,6 +64,7 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", "Noto Sans KR",
     "맑은 고딕", sans-serif;
   font-size: 16px;
+  position: relative;
 }
 
 a {
@@ -294,7 +295,7 @@ a {
   background: white;
   border-radius: 4px;
   transform: translateY(0);
-  transition: all 0.2s ease-in 0s;
+  transition: transform 0.2s ease-in 0s;
 }
 
 .card:hover {
@@ -421,4 +422,42 @@ card-title {
 
 .modal-close-button:hover {
   background-color: rgb(190, 190, 190);
+}
+
+.main-area {
+  margin: 2em auto 0 auto;
+  width: var(--content-width);
+}
+
+.image-slider {
+  display: flex;
+}
+
+.image-slider-button {
+  display: block;
+
+  background-color: rgb(241, 241, 241);
+  border: 1px solid transparent;
+
+  transition: all 0.3s;
+}
+
+.image-slider-button:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+.image-slider-slot {
+  margin: 0 1em;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.image-slider-container {
+  display: flex;
+  padding: 0.5em 0;
+  transition: transform 0.5s;
+}
+
+.image-slider-container > * {
+  margin-right: 1em;
 }

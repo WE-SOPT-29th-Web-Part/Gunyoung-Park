@@ -1,6 +1,7 @@
 import { generateData } from "./api.js";
 import { h } from "./dom.js";
 import { setNavDropdown } from "./dropdown.js";
+import { useImageSlider } from "./imageSlider.js";
 
 class ArticleCard {
   props = {
@@ -118,6 +119,7 @@ function main() {
     articleList,
   });
   setNavDropdown();
+  useImageSlider(document.getElementsByClassName("image-slider")[0]);
 }
 
 window.addEventListener("load", main);
