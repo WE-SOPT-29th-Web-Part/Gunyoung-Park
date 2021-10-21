@@ -18,7 +18,6 @@ export function useImageSlider(root) {
 
     scrollWidth =
       item2.getBoundingClientRect().left - item1.getBoundingClientRect().left;
-    console.log(scrollWidth);
   }
 
   function getStartOffset() {
