@@ -17,6 +17,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <script src="./src/index.js"></script>
   </head>
   <body>
     <header class="title">
@@ -24,33 +25,17 @@
     </header>
 
     <nav class="navbar">
-      <button class="navbar__item">오늘만 보기</button>
-      <button class="navbar__item">내일만 보기</button>
-      <button class="navbar__item">함께 보기</button>
+      <button class="navbar__item" id="today_button">오늘만 보기</button>
+      <button class="navbar__item" id="tomorrow_button">내일만 보기</button>
+      <button class="navbar__item" id="both_button">함께 보기</button>
     </nav>
 
     <main class="container">
-      <section class="todos">
+      <section class="todos" id="today_panel">
         <header class="todos__header">
           <h2>오늘 할 일</h2>
         </header>
-        <ul class="todos__list">
-          <li class="todos__item">
-            공부하기<button>
-              <span class="material-icons">&#xe872;</span>
-            </button>
-          </li>
-          <li class="todos__item">
-            과제하기<button>
-              <span class="material-icons">&#xe872;</span>
-            </button>
-          </li>
-          <li class="todos__item">
-            일찍자기<button>
-              <span class="material-icons">&#xe872;</span>
-            </button>
-          </li>
-        </ul>
+        <ul class="todos__list"></ul>
         <footer class="todos__controls">
           <input type="text" class="todos__textfield" />
           <button class="todos__commit">
@@ -59,22 +44,11 @@
         </footer>
       </section>
 
-      <section class="todos">
+      <section class="todos" id="tomorrow_panel">
         <header class="todos__header">
           <h2>내일 할 일</h2>
         </header>
-        <ul class="todos__list">
-          <li class="todos__item">
-            신나게 놀기<button>
-              <span class="material-icons">&#xe872;</span>
-            </button>
-          </li>
-          <li class="todos__item">
-            공부하기<button>
-              <span class="material-icons">&#xe872;</span>
-            </button>
-          </li>
-        </ul>
+        <ul class="todos__list"></ul>
         <footer class="todos__controls">
           <input type="text" class="todos__textfield" />
           <button class="todos__commit">
