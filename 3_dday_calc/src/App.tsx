@@ -35,18 +35,17 @@ function useDate() {
 }
 
 function App() {
-  const currentDate = useDate();
-
-  function changeDate(newDate: Date) {
-    currentDate.fromJSDate(newDate);
-  }
+  const [currentDate, setCurrentDate] = useState(new Date());
 
   return (
     <Container>
       <Header />
-      <DatePicker date={currentDate.toJSDate()} onDateChange={changeDate} />
+      <DatePicker
+        date={currentDate}
+        onDateChange={(date) => setCurrentDate(date)}
+      />
       <SubHeader />
-      <Result />
+      <Result currentDate={currentDate} />
       <Footer />
       {JSON.stringify(currentDate)}
     </Container>
