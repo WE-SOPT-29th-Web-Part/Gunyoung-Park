@@ -17,7 +17,7 @@ function DateFromX(props: DateFromXProps) {
   return (
     <div>
       <div>
-        <NumberInput onValueChange={(v) => setDays(v)} />
+        <NumberInput onValueChange={(v) => setDays(v)} value={days} />
         일째 되는 날은?
       </div>
       <DatePresenter date={addedDate} />
@@ -25,15 +25,25 @@ function DateFromX(props: DateFromXProps) {
   );
 }
 
-function DateToX() {
+interface DateToXProps {
+  currentDate: Date;
+}
+
+function DateToX(props: DateToXProps) {
+  const { currentDate } = props;
+
+  const [days, setDays] = useState(1);
+
+  const addedDate = addDays(currentDate, -days);
+
   return (
     <div>
       <div>
         D-
-        <NumberInput />
+        <NumberInput onValueChange={(v) => setDays(v)} value={days} />
         는?
       </div>
-      {/* <DatePresenter /> */}
+      <DatePresenter date={addedDate} />
     </div>
   );
 }
@@ -48,7 +58,7 @@ export function Result(props: ResultProps) {
   return (
     <div>
       <DateFromX currentDate={currentDate}></DateFromX>
-      <DateToX></DateToX>
+      <DateToX currentDate={currentDate}></DateToX>
     </div>
   );
 }
