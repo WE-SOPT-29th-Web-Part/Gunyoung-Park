@@ -15,25 +15,6 @@ const Container = styled.div`
   margin-top: 5rem;
 `;
 
-function useDate() {
-  const currentDate = new Date();
-  const [year, setYear] = useState(currentDate.getFullYear());
-  const [month, setMonth] = useState(currentDate.getMonth());
-  const [date, setDate] = useState(currentDate.getDate());
-
-  function fromJSDate(date: Date) {
-    setYear(date.getFullYear());
-    setMonth(date.getMonth() + 1);
-    setDate(date.getDate());
-  }
-
-  function toJSDate() {
-    return new Date(year, month - 1, date);
-  }
-
-  return { year, month, date, fromJSDate, toJSDate };
-}
-
 function App() {
   const [currentDate, setCurrentDate] = useState(new Date());
 
