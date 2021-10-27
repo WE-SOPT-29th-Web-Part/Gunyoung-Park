@@ -1,5 +1,9 @@
-import React from "react";
+import styled from "styled-components";
+
+const FooterBox = styled.div`
+  text-align: center;
+`;
 
 export function Footer() {
-  return <div>Tekiter</div>;
+  return <FooterBox>Tekiter</FooterBox>;
 }

@@ -10,9 +10,10 @@ import { SubHeader } from "./components/SubHeader";
 const Container = styled.div`
   border: 1px solid gray;
   width: 30rem;
-  height: 30rem;
   margin: auto;
   margin-top: 5rem;
+
+  background-color: white;
 `;
 
 function App() {
@@ -28,7 +29,6 @@ function App() {
       <SubHeader />
       <Result currentDate={currentDate} />
       <Footer />
-      {JSON.stringify(currentDate)}
     </Container>
   );
 }

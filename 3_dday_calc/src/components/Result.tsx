@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styled from "styled-components";
 import { addDays } from "../util/datefn";
 import { DatePresenter } from "./common/DatePresenter";
 import { NumberInput } from "./common/NumberInput";
@@ -40,13 +41,17 @@ function DateToX(props: DateToXProps) {
     <div>
       <div>
         D-
-        <NumberInput onValueChange={(v) => setDays(v)} value={days} />
+        <LeftNumberInput onValueChange={(v) => setDays(v)} value={days} />
         는?
       </div>
       <DatePresenter date={addedDate} />
     </div>
   );
 }
+
+const LeftNumberInput = styled(NumberInput)`
+  text-align: left;
+`;
 
 interface ResultProps {
   currentDate: Date;

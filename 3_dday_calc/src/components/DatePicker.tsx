@@ -1,11 +1,37 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import styled from "styled-components";
+import colors from "../styles/colors";
 
 const TextInput = styled.input`
-  width: 4em;
+  width: 2.5em;
+  background-color: transparent;
+  border-width: 0 0 3px 0;
+  border-color: ${colors.lightPrimary};
+
+  text-align: right;
+  font-size: 1.5em;
+
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: ${colors.primary};
+  }
+
+  &:focus-visible {
+    border-color: ${colors.primary};
+    outline: none;
+  }
 `;
 
-const TodayButton = styled.button``;
+const DateLabel = styled.label`
+  margin-right: 0.6em;
+`;
+
+const TodayButton = styled.button`
+  border: 1px solid transparent;
+  background-color: lightgray;
+  border-radius: 5px;
+`;
 
 interface DatePickerProps {
   date: Date;
@@ -62,30 +88,28 @@ export function DatePicker(props: DatePickerProps) {
 
   return (
     <div>
-      <TodayButton onClick={makeToday}>오늘</TodayButton>
-      <div>
-        <TextInput
-          type="text"
-          name="year"
-          onChange={handleInputChange}
-          value={yearStr}
-        />
-        년
-        <TextInput
-          type="text"
-          name="month"
-          onChange={handleInputChange}
-          value={monthStr}
-        />
-        월
-        <TextInput
-          type="text"
-          name="date"
-          onChange={handleInputChange}
-          value={dateStr}
-        />
-        일을 기준으로
-      </div>
+      <TextInput
+        type="text"
+        name="year"
+        onChange={handleInputChange}
+        value={yearStr}
+      />
+      <DateLabel>년</DateLabel>
+      <TextInput
+        type="text"
+        name="month"
+        onChange={handleInputChange}
+        value={monthStr}
+      />
+      <DateLabel>월</DateLabel>
+      <TextInput
+        type="text"
+        name="date"
+        onChange={handleInputChange}
+        value={dateStr}
+      />
+      <DateLabel>일</DateLabel>
+      <TodayButton onClick={makeToday}>Today</TodayButton>
     </div>
   );
 }

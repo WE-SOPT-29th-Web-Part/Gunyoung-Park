@@ -9,5 +9,5 @@ export function DatePresenter(props: DatePresenterProps) {
   const month = dateValue.getMonth() + 1;
   const date = dateValue.getDate();
 
-  return <div>{`${year} ${month} ${date}`}</div>;
+  return <div>{`${year}년 ${month}월 ${date}일`}</div>;
 }

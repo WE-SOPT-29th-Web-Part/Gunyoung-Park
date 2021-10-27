@@ -1,5 +1,3 @@
-import React from "react";
-
 export function SubHeader() {
-  return <div>D-day 계산기~</div>;
+  return <div>기준으로</div>;
 }
