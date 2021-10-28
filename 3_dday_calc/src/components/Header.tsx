@@ -5,15 +5,18 @@ const HeaderBox = styled.div`
 
   text-align: center;
 
+  margin-bottom: 1.3em;
+
   & h1 {
     margin: 0;
+    font-weight: 500;
   }
 `;
 
 export function Header() {
   return (
     <HeaderBox>
-      <h1>D-day 계산기</h1>
+      <h1>D-day Calc.</h1>
     </HeaderBox>
   );
 }

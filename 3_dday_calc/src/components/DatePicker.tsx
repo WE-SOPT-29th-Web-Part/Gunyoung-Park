@@ -2,14 +2,22 @@ import { ChangeEvent, useEffect, useState } from "react";
 import styled from "styled-components";
 import colors from "../styles/colors";
 
-const TextInput = styled.input`
-  width: 2.5em;
+const TextInput = styled.input<{ width?: string }>`
+  width: ${(props) => props.width ?? "2.5em"};
+  padding: 0.05em 0.3em;
   background-color: transparent;
-  border-width: 0 0 3px 0;
-  border-color: ${colors.lightPrimary};
 
-  text-align: right;
+  border: none;
+  border-left: 1px solid $white;
+  border-top: 1px solid $white;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+
+  text-align: center;
   font-size: 1.5em;
+
+  color: inherit;
 
   transition: border-color 0.3s;
 
@@ -28,9 +36,33 @@ const DateLabel = styled.label`
 `;
 
 const TodayButton = styled.button`
-  border: 1px solid transparent;
-  background-color: lightgray;
-  border-radius: 5px;
+  border: 1px solid white;
+  background-color: transparent;
+  border-radius: 5000px;
+
+  color: inherit;
+  cursor: pointer;
+
+  width: 4em;
+  font-size: 1.1em;
+
+  transition: background-color 0.15s;
+
+  &:hover {
+    background-color: rgb(231, 231, 231, 0.1);
+  }
+
+  &:active {
+    background-color: rgb(231, 231, 231, 0.2);
+  }
+`;
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+
+  padding-left: 4em;
+  padding-bottom: 0.6em;
 `;
 
 interface DatePickerProps {
@@ -87,7 +119,7 @@ export function DatePicker(props: DatePickerProps) {
   }
 
   return (
-    <div>
+    <Container>
       <TextInput
         type="text"
         name="year"
@@ -98,6 +130,7 @@ export function DatePicker(props: DatePickerProps) {
       <TextInput
         type="text"
         name="month"
+        width="1.5em"
         onChange={handleInputChange}
         value={monthStr}
       />
@@ -105,11 +138,12 @@ export function DatePicker(props: DatePickerProps) {
       <TextInput
         type="text"
         name="date"
+        width="1.5em"
         onChange={handleInputChange}
         value={dateStr}
       />
       <DateLabel>일</DateLabel>
       <TodayButton onClick={makeToday}>Today</TodayButton>
-    </div>
+    </Container>
   );
 }

@@ -6,6 +6,7 @@ interface NumberInputProps {
   onValueChange?(value: number): void;
   value?: number;
   className?: string;
+  isLeft?: boolean;
 }
 
 export const NumberInput = styled(function NumberInput(
@@ -39,11 +40,20 @@ export const NumberInput = styled(function NumberInput(
   );
 })`
   width: 2.5em;
+  padding: 0 0.2em;
   background-color: transparent;
-  border-width: 0 0 3px 0;
-  border-color: ${colors.lightPrimary};
 
-  text-align: right;
+  border: none;
+  border-left: 1px solid $white;
+  border-top: 1px solid $white;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+
+  color: inherit;
+
+  text-align: ${(props) => (props.isLeft ? "left" : "right")};
+
   font-size: 1.5em;
 
   transition: border-color 0.3s;
