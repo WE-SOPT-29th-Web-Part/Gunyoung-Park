@@ -14,7 +14,7 @@ export function ProfileResult(props: ProfileResultProps) {
   }
 
   return (
-    <GlassCard marginTop="1em">
+    <GlassCard marginTop="1em" style={{ zIndex: -1 }}>
       <ProfileResultContent {...props} />
     </GlassCard>
   );

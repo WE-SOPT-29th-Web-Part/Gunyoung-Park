@@ -8,6 +8,7 @@ interface SearchBarProps {
   value?: string;
   onChange?(val: string): void;
   onSubmit?(val: string): void;
+  onFocus?(): void;
 }
 
 function SearchBarRaw(props: SearchBarProps) {
@@ -16,6 +17,7 @@ function SearchBarRaw(props: SearchBarProps) {
     value = undefined,
     onChange = () => {},
     onSubmit = () => {},
+    onFocus = () => {},
   } = props;
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
@@ -28,6 +30,10 @@ function SearchBarRaw(props: SearchBarProps) {
     }
   }
 
+  function handleFocus() {
+    onFocus();
+  }
+
   return (
     <div className={props.className}>
       <SearchInput
@@ -35,6 +41,7 @@ function SearchBarRaw(props: SearchBarProps) {
         value={value}
         onChange={handleChange}
         onKeyPress={handleKeyPress}
+        onClick={handleFocus}
       />
     </div>
   );
