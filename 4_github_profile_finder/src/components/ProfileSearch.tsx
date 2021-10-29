@@ -48,7 +48,7 @@ export function ProfileSearch(props: ProfileSearchProps) {
   }
 
   return (
-    <GlassCard>
+    <GlassCard style={{ zIndex: 999 }}>
       <Header>Github Profile Finder</Header>
       <SearchBarHolder>
         <SearchBar

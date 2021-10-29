@@ -6,6 +6,7 @@ import { UserProfile } from "./UserProfile";
 
 interface ProfileResultProps {
   username: string;
+  onClose(): void;
 }
 
 export function ProfileResult(props: ProfileResultProps) {
@@ -14,11 +15,36 @@ export function ProfileResult(props: ProfileResultProps) {
   }
 
   return (
-    <GlassCard marginTop="1em" style={{ zIndex: -1 }}>
+    <GlassCard marginTop="1em">
+      <CloseButton onClick={() => props.onClose()}>X</CloseButton>
       <ProfileResultContent {...props} />
     </GlassCard>
   );
 }
+
+const CloseButton = styled.button`
+  position: absolute;
+  cursor: pointer;
+
+  top: 0;
+  right: 0;
+
+  text-align: center;
+  width: 2em;
+  height: 2em;
+
+  background-color: transparent;
+  border: none;
+  border-radius: 0 14px 0 14px;
+  color: inherit;
+  font-size: 1.3rem;
+
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: rgb(255, 255, 255, 0.1);
+  }
+`;
 
 function ProfileResultContent(props: ProfileResultProps): ReactElement {
   const { username = "" } = props;

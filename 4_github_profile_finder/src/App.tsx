@@ -14,17 +14,22 @@ const Container = styled.div`
 function App() {
   const [username, setUsername] = useState("");
 
-  function usernameChange(val: string) {
+  function usernameChange(val: string | null) {
     if (val === "") {
       return;
     }
+    if (val === null) {
+      setUsername("");
+      return;
+    }
+
     setUsername(val);
   }
 
   return (
     <Container>
       <ProfileSearch onSearch={usernameChange} />
-      <ProfileResult username={username} />
+      <ProfileResult username={username} onClose={() => usernameChange(null)} />
     </Container>
   );
 }
