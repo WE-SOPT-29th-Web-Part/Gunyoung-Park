@@ -1,13 +1,35 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { GlassCard } from "./GlassCard";
 import { SearchBar } from "./SearchBar";
 
-export function ProfileSearch() {
+interface ProfileSearchProps {
+  onSearch(val: string): void;
+}
+
+export function ProfileSearch(props: ProfileSearchProps) {
+  const { onSearch } = props;
+
+  const [localValue, setLocalValue] = useState("");
+
+  function onSearchContentChange(val: string) {
+    setLocalValue(val);
+  }
+
+  function onSearchSubmit(val: string) {
+    onSearch(val);
+  }
+
   return (
     <GlassCard>
       <Header>Github Profile Finder</Header>
       <SearchBarHolder>
-        <SearchBar placeHolder="Github Username..." />
+        <SearchBar
+          placeHolder="Github Username..."
+          value={localValue}
+          onChange={onSearchContentChange}
+          onSubmit={onSearchSubmit}
+        />
       </SearchBarHolder>
     </GlassCard>
   );

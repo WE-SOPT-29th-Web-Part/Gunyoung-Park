@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, KeyboardEvent } from "react";
 import styled from "styled-components";
 
 interface SearchBarProps {
@@ -7,13 +7,25 @@ interface SearchBarProps {
 
   value?: string;
   onChange?(val: string): void;
+  onSubmit?(val: string): void;
 }
 
 function SearchBarRaw(props: SearchBarProps) {
-  const { placeHolder = "", value = undefined, onChange = () => {} } = props;
+  const {
+    placeHolder = "",
+    value = undefined,
+    onChange = () => {},
+    onSubmit = () => {},
+  } = props;
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     onChange(e.target.value);
+  }
+
+  function handleKeyPress(e: KeyboardEvent<HTMLInputElement>) {
+    if (e.key === "Enter") {
+      onSubmit(e.currentTarget.value);
+    }
   }
 
   return (
@@ -22,6 +34,7 @@ function SearchBarRaw(props: SearchBarProps) {
         placeholder={placeHolder}
         value={value}
         onChange={handleChange}
+        onKeyPress={handleKeyPress}
       />
     </div>
   );
