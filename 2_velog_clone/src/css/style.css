@@ -30,7 +30,7 @@
   }
 
   .card.card {
-    width: 49%;
+    width: 45vw;
   }
 
   .hide-on-mobile {
@@ -44,7 +44,7 @@
   }
 
   .card.card {
-    width: 98%;
+    width: 90vw;
   }
 
   .hide-on-mobile {
@@ -64,6 +64,7 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", "Noto Sans KR",
     "맑은 고딕", sans-serif;
   font-size: 16px;
+  position: relative;
 }
 
 a {
@@ -130,10 +131,10 @@ a {
   border: 1px solid black;
 
   font-size: 1em;
-  font-weight: 600;
+  font-weight: 500;
   background-color: white;
   height: 2em;
-  padding: 0em 1em;
+  padding: 0.2em 1em;
 
   transition: all 0.125s ease-in 0s;
 }
@@ -205,6 +206,10 @@ a {
 }
 
 .nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-button {
   display: flex;
   align-items: center;
 
@@ -212,18 +217,63 @@ a {
   background-color: white;
   color: black;
   font-size: 0.9em;
+  min-width: 8em;
 
   border-radius: 5px;
   padding: 0.3em 0.7em;
   height: fit-content;
 }
 
-.nav-dropdown:hover {
+.dropdown-open {
+  visibility: visible !important;
+}
+
+.dropdown-display {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.dropdown-selected {
+  color: green;
+}
+
+.nav-dropdown-button .material-icons {
+  margin-left: 0.4em;
+}
+
+.nav-dropdown-button:hover {
   color: grey;
 }
 
-.nav-dropdown .material-icons {
-  margin-left: 0.4em;
+.nav-dropdown-content {
+  visibility: collapse;
+
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 100%;
+  width: 10em;
+  padding-top: 1em;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-dropdown-content > * {
+  border: none;
+  padding: 0.8em 1em;
+  font-size: 1em;
+  text-align: left;
+  background-color: white;
+  font-weight: 700;
+}
+
+.nav-dropdown-content > *:not(:last-child) {
+  border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.nav-dropdown-content > *:hover {
+  background-color: rgb(241, 241, 241);
 }
 
 .container {
@@ -245,7 +295,7 @@ a {
   background: white;
   border-radius: 4px;
   transform: translateY(0);
-  transition: all 0.2s ease-in 0s;
+  transition: transform 0.2s ease-in 0s;
 }
 
 .card:hover {
@@ -331,4 +381,83 @@ card-title {
 .card-footer-like .material-icons {
   font-size: 1em;
   margin-right: 0.5em;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 40%);
+}
+
+.modal-show {
+  display: block !important;
+}
+
+.modal-content {
+  margin: 15vh auto;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-close-button {
+  text-align: center;
+  margin-top: 0.7em;
+
+  width: 2.5em;
+  height: 2.5em;
+  border: none;
+  border-radius: 50%;
+  font-weight: 700;
+
+  background-color: rgb(167, 167, 167);
+}
+
+.modal-close-button:hover {
+  background-color: rgb(190, 190, 190);
+}
+
+.main-area {
+  margin: 2em auto 0 auto;
+  width: var(--content-width);
+}
+
+.image-slider {
+  display: flex;
+}
+
+.image-slider-button {
+  display: block;
+
+  background-color: rgb(241, 241, 241);
+  border: 1px solid transparent;
+
+  transition: all 0.3s;
+}
+
+.image-slider-button:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+.image-slider-slot {
+  margin: 0 1em;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.image-slider-container {
+  display: flex;
+  padding: 0.5em 0;
+  transition: transform 0.5s;
+}
+
+.image-slider-container > * {
+  margin-right: 1em;
 }
