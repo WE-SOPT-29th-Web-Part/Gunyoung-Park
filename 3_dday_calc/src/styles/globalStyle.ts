@@ -1,7 +1,22 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, keyframes } from "styled-components";
 import colors from "./colors";
 
+const backgroundAnimation = keyframes`
+  0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+`;
+
 const GlobalStyle = createGlobalStyle`
+html {
+  min-height: 100%;
+}
   body {
     margin: 0;
     font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -12,11 +27,16 @@ const GlobalStyle = createGlobalStyle`
   
     box-sizing: border-box;
 
-    /* background-color: ${colors.background}; */
-    background: linear-gradient(320deg,#f27121,#e94057,#8a2387);
+    background: rgb(242,113,33);
+    background: linear-gradient(320deg,#f27121,#e94057,#8a2387,#23a6d5);
+    background-size: 400% 400%;
+
+    animation: ${backgroundAnimation} 30s ease infinite;
+
+
     color: ${colors.foreground};
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    height: 100vh;
+    height: 100%;
   }
   
   code {

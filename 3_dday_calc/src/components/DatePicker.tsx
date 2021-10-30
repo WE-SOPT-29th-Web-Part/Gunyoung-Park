@@ -32,6 +32,7 @@ const TextInput = styled.input<{ width?: string }>`
 `;
 
 const DateLabel = styled.label`
+  margin-left: 0.2em;
   margin-right: 0.6em;
 `;
 
