@@ -5,9 +5,7 @@ name: Publish Demo CI
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [ demo ]
 
 jobs:
   build:
