@@ -19,7 +19,11 @@ export function DateFromX(props: DateFromXProps) {
     <Container>
       <div>
         <DLabel>D+</DLabel>
-        <NumberInput onValueChange={(v) => setDays(v)} value={days} isLeft />
+        <NumberInput
+          onValueChange={(v) => setDays(v)}
+          value={days}
+          align="left"
+        />
       </div>
       <DatePresenter date={addedDate} />
     </Container>

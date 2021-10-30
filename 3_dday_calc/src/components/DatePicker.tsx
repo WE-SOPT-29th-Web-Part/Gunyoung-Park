@@ -88,7 +88,7 @@ export function DatePicker(props: DatePickerProps) {
     const value = e.target.value;
 
     const isPositiveNumber =
-      value.startsWith("-") || (value.length > 0 && isNaN(parseInt(value)));
+      value.startsWith("-") || (value.length > 0 && isNaN(+value));
     if (isPositiveNumber) {
       return;
     }
