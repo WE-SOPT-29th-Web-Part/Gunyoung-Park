@@ -6,7 +6,7 @@ interface NumberInputProps {
   onValueChange?(value: number): void;
   value?: number;
   className?: string;
-  isLeft?: boolean;
+  align?: "left" | "center" | "right";
 }
 
 export const NumberInput = styled(function NumberInput(
@@ -21,11 +21,12 @@ export const NumberInput = styled(function NumberInput(
   }, [value]);
 
   function valueChanged(e: ChangeEvent<HTMLInputElement>) {
-    setRaw(e.target.value);
+    const num = +e.target.value;
 
-    const num = parseInt(e.target.value);
-
-    if (!isNaN(num)) {
+    if (e.target.value === "") {
+      setRaw("");
+    } else if (!e.target.value.includes("-") && !isNaN(num)) {
+      setRaw(e.target.value);
       onValueChange(num);
     }
   }
@@ -52,7 +53,7 @@ export const NumberInput = styled(function NumberInput(
 
   color: inherit;
 
-  text-align: ${(props) => (props.isLeft ? "left" : "right")};
+  text-align: ${(props) => props.align ?? "left"};
 
   font-size: 1.5em;
 
