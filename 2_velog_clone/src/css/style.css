@@ -4,6 +4,8 @@
   --laptop-width: 1040px;
   --tablet-width: 98%;
   --mobile-width: 98%;
+
+  --global-background: black;
 }
 
 @media screen {
