@@ -7,13 +7,12 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     html {
-
+        font-family: "Noto Sans KR", sans-serif;
     }
 
 
     body {
-
-
+        overflow-x: hidden;
     }
     
 `;

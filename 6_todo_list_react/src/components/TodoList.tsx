@@ -22,7 +22,10 @@ export function TodoList(props: TodoListProps) {
       <TodoListLabel>{props.label}</TodoListLabel>
       <TodoListItemContainer>
         {list.map((item, idx) => (
-          <TodoListItem key={idx}>{item.content}</TodoListItem>
+          <TodoListItem key={idx}>
+            {item.content}
+            <TodoListItemDelete>X</TodoListItemDelete>
+          </TodoListItem>
         ))}
       </TodoListItemContainer>
       <TodoListControl onAdd={addTodo} />
@@ -36,9 +39,13 @@ const TodoListBox = styled.section`
   flex-direction: column;
 
   padding: 1em 2em;
+  border: 1px solid black;
 `;
 
-const TodoListLabel = styled.h2``;
+const TodoListLabel = styled.h2`
+  font-size: 1.7em;
+  font-weight: 500;
+`;
 
 const TodoListItemContainer = styled.ul`
   width: 100%;
@@ -47,4 +54,30 @@ const TodoListItemContainer = styled.ul`
   text-decoration: none;
 `;
 
-const TodoListItem = styled.li``;
+const TodoListItem = styled.li`
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 0.5em;
+
+  &:not(:last-child) {
+    border-bottom: 1px dashed lightgray;
+  }
+`;
+
+const TodoListItemDelete = styled.button`
+  height: 2.5em;
+  width: 2.5em;
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  text-align: center;
+
+  &:hover {
+    background-color: rgb(236, 236, 236);
+  }
+
+  &:active {
+    background-color: lightgray;
+  }
+`;

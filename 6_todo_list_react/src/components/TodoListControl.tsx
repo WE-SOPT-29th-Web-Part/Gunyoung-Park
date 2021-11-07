@@ -40,4 +40,18 @@ const ContentInput = styled.input`
   flex-grow: 1;
 `;
 
-const SubmitButton = styled.button``;
+const SubmitButton = styled.button`
+  width: 4em;
+  height: 2em;
+  background-color: #03dac6;
+  border: 1px solid gray;
+  border-radius: 0 5px 5px 0;
+
+  &:hover {
+    background-color: #70efde;
+  }
+
+  &:active {
+    background-color: #018786;
+  }
+`;

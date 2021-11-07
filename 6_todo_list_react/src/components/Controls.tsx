@@ -30,7 +30,24 @@ export function Controls(props: ControlsProps) {
 
 const ControlsBox = styled.div`
   width: fit-content;
-  margin: 0 auto;
+  margin: 0.5em auto;
+
+  & > *:not(:last-child) {
+    margin-right: 0.3em;
+  }
 `;
 
-const ControlButton = styled.button``;
+const ControlButton = styled.button`
+  padding: 0.3em 0.5em;
+  background-color: #03dac6;
+  color: black;
+  border: none;
+
+  &:hover {
+    background-color: #03dac6;
+  }
+
+  &:active {
+    background-color: #018786;
+  }
+`;

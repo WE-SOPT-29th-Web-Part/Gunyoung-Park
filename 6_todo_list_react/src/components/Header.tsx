@@ -10,5 +10,8 @@ export function Header() {
 
 const HeaderBox = styled.header`
   background-color: grey;
+  color: white;
   text-align: center;
+
+  padding: 0.5em 0;
 `;
