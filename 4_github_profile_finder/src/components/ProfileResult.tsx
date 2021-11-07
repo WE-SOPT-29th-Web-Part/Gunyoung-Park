@@ -53,7 +53,11 @@ function ProfileResultContent(props: ProfileResultProps): ReactElement {
     useGithubProfileInfo(username);
 
   if (isLoading) {
-    return <LoadingBox>Loading...</LoadingBox>;
+    return (
+      <LoadingBox>
+        <Loader />
+      </LoadingBox>
+    );
   }
 
   if (isError) {
@@ -76,6 +80,26 @@ const LoadingBox = styled.div`
   text-align: center;
   font-size: 1.3rem;
   font-weight: 300;
+`;
+
+const Loader = styled.span`
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #f3f3f3;
+  margin: 0 auto;
+
+  animation: move 300ms linear 0s infinite alternate none;
+
+  @keyframes move {
+    0% {
+      transform: translateX(-25px);
+    }
+
+    100% {
+      transform: translateX(25px);
+    }
+  }
 `;
 
 const ErrorBox = styled.div`
