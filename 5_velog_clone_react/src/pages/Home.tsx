@@ -1,3 +1,9 @@
+import { TopBar } from "../components/molecule/TopBar";
+
 export function Home() {
-  return <div></div>;
+  return (
+    <div>
+      <TopBar />
+    </div>
+  );
 }
