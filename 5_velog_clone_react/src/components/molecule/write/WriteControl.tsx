@@ -1,3 +1,4 @@
+import { useLocation, useNavigate } from "react-router";
 import styled from "styled-components";
 import { Button } from "../../atom/Button";
 
@@ -8,10 +9,12 @@ interface WriteControlProps {
 export function WriteControl(props: WriteControlProps) {
   const { onSubmit } = props;
 
+  const navigate = useNavigate();
+
   return (
     <WriteControlBox>
       <div>
-        <Button>나가기</Button>
+        <Button onClick={() => navigate("/")}>나가기</Button>
       </div>
       <div>
         <Button>임시저장</Button>

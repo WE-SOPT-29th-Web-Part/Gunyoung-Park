@@ -9,6 +9,7 @@ export function useInput(init: string) {
 
   return {
     value,
+    setValue,
     onChange: onInputChange,
   };
 }
