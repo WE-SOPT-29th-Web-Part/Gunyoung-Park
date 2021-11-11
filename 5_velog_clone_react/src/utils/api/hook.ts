@@ -24,14 +24,16 @@ export function useWriteArticle() {
 
 export function useArticleSummaries() {
   const [data, setData] = useState<Article[]>([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     (async () => {
+      setLoading(true);
       const data = await api.getArticles();
       setData(data);
-      console.log(data);
+      setLoading(false);
     })();
   }, []);
 
-  return { data };
+  return { data, loading };
 }
