@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { ArticleToWrite, ArticleChanger } from "../../../utils/article";
 import { Button } from "../../atom/Button";
-import { TextArea } from "../../atom/TextArea";
+import { TextAreaLimited } from "../../atom/TextArea";
 
 interface AdditionalArticleInfoProps {
   onCancel(): void;
@@ -13,7 +13,7 @@ interface AdditionalArticleInfoProps {
 export function AdditionalArticleInfo(props: AdditionalArticleInfoProps) {
   return (
     <InfoBox>
-      <TextArea
+      <TextAreaLimited
         value={props.article.summary}
         onChange={(e) => props.onChange("summary", e.target.value)}
         placeholder="당신의 포스트를 짧게 소개해보세요."
