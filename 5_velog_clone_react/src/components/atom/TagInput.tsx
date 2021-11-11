@@ -5,6 +5,7 @@ import { useInput } from "../../utils/input";
 interface TagInputProps {
   tags: string[];
   onChange(tags: string[]): void;
+  placeholder: string;
 }
 
 export function TagInput(props: TagInputProps) {
@@ -34,7 +35,11 @@ export function TagInput(props: TagInputProps) {
           {tag}
         </TagInputButton>
       ))}
-      <TagInputInner onKeyPress={handleInnerKey} {...tag} />
+      <TagInputInner
+        onKeyPress={handleInnerKey}
+        {...tag}
+        placeholder={props.placeholder}
+      />
     </TagInputBox>
   );
 }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import styled from "styled-components";
 import { useWriteArticle } from "../../utils/api/hook";
 import { useArticle } from "../../utils/article";
@@ -10,9 +11,11 @@ export function WriteArticle() {
 
   const article = useArticle();
   const writer = useWriteArticle();
+  const navigate = useNavigate();
 
   async function writeArticle() {
     await writer.request({ ...article.value });
+    navigate("/");
   }
 
   function openAddi() {

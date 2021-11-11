@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { Article } from "../article";
 import { MockApiService } from "./mock";
 import { ApiService } from "./types";
 
@@ -18,4 +20,18 @@ export function useWriteArticle() {
   return {
     request,
   };
+}
+
+export function useArticleSummaries() {
+  const [data, setData] = useState<Article[]>([]);
+
+  useEffect(() => {
+    (async () => {
+      const data = await api.getArticles();
+      setData(data);
+      console.log(data);
+    })();
+  }, []);
+
+  return { data };
 }
