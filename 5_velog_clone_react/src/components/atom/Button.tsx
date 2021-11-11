@@ -27,6 +27,29 @@ export const IconButton = styled.button`
   border-radius: 50%;
   border: none;
   background-color: transparent;
+  transition: background-color 0.3s;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e2e2e2;
+  }
+`;
+
+export const LinkIconButton = styled.a`
+  display: block;
+
+  height: 32px;
+  width: 32px;
+
+  color: gray;
+  fill: gray;
+  transition: color 0.3s, fill 0.3s;
+
+  &:hover {
+    color: black;
+    fill: black;
+  }
 `;
 
 export const Button = styled.button``;
