@@ -24,21 +24,24 @@ export function WriteArticleContents(props: WriteArticleContentsProps) {
 
   return (
     <WriteBox>
-      <TitleInput
-        value={article.title}
-        onChange={handleChange("title")}
-        placeholder="제목을 입력하세요"
-      />
-      <TagInput
-        tags={article.tags}
-        onChange={(tags) => onChange("tags", tags)}
-        placeholder="태그를 입력하세요"
-      />
-      <TextArea
-        value={article.content}
-        onChange={handleChange("content")}
-        placeholder="당신의 이야기를 적어보세요..."
-      />
+      <WriteContentBox>
+        <TitleInput
+          value={article.title}
+          onChange={handleChange("title")}
+          placeholder="제목을 입력하세요"
+        />
+        <Bar />
+        <TagInput
+          tags={article.tags}
+          onChange={(tags) => onChange("tags", tags)}
+          placeholder="태그를 입력하세요"
+        />
+        <TextArea
+          value={article.content}
+          onChange={handleChange("content")}
+          placeholder="당신의 이야기를 적어보세요..."
+        />
+      </WriteContentBox>
       <WriteControl onSubmit={onNext} />
     </WriteBox>
   );
@@ -46,7 +49,21 @@ export function WriteArticleContents(props: WriteArticleContentsProps) {
 
 const WriteBox = styled.div`
   background-color: white;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
+`;
+
+const WriteContentBox = styled.div`
+  padding: 2.5em 2.5em;
+  flex-grow: 1;
+`;
+
+const Bar = styled.div`
+  background-color: black;
+  width: 4rem;
+  height: 6px;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 `;

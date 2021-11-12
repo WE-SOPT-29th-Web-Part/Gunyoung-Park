@@ -9,4 +9,17 @@ export const TitleInput = forwardRef<
   return <TitleInputInner {...props} type="text" ref={ref}></TitleInputInner>;
 });
 
-const TitleInputInner = styled.input``;
+const TitleInputInner = styled.input`
+  display: block;
+
+  border: none;
+  font-size: 2.75rem;
+  font-weight: 600;
+  outline: none;
+
+  color: #212529;
+
+  &::placeholder {
+    color: lightgray;
+  }
+`;

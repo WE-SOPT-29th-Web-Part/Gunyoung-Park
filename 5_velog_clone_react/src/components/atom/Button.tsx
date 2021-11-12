@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const RoundButton = styled.button`
   border-radius: 1em;
@@ -52,4 +52,64 @@ export const LinkIconButton = styled.a`
   }
 `;
 
-export const Button = styled.button``;
+interface ButtonProps {
+  variant?: ButtonVariants;
+}
+
+type ButtonVariants = "success" | "transparent";
+
+export const Button = styled.button<ButtonProps>`
+  display: flex;
+  align-items: center;
+
+  height: 2.5rem;
+  padding: 0 1.3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+
+  transition: background-color 0.2s;
+
+  & > svg:first-child {
+    margin-right: 0.5em;
+  }
+
+  ${(props) => buttonVariantValue(props.variant)}
+`;
+
+function buttonVariantValue(variant?: ButtonVariants) {
+  switch (variant) {
+    case "success":
+      return css`
+        background-color: #12b886;
+        color: white;
+
+        &:hover {
+          background-color: #20c997;
+        }
+      `;
+    case "transparent":
+      return css`
+        background-color: transparent;
+        color: black;
+        font-weight: normal;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+      `;
+    default:
+      return css`
+        background-color: #e9ecef;
+        color: black;
+
+        &:hover {
+          background-color: #f1f3f5;
+        }
+      `;
+  }
+}

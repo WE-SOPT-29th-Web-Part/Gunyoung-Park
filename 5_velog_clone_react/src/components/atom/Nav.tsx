@@ -30,7 +30,7 @@ export function Nav(props: NavProps) {
           </NavItem>
         ))}
       </NavInner>
-      <NavUnderline position={selected} />
+      <NavUnderline position={selected !== -1 ? selected : 0} />
     </NavBox>
   );
 }

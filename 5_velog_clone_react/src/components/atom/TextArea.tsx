@@ -6,6 +6,8 @@ interface TextAreaLimitedProps {
   onChange(e: ChangeEvent<HTMLTextAreaElement>): void;
   placeholder?: string;
   limit?: number;
+
+  className?: string;
 }
 
 export function TextAreaLimited(props: TextAreaLimitedProps) {
@@ -48,6 +50,13 @@ const TextAreaLimitedBox = styled.div<{ isFull?: boolean }>`
 const TextAreaInner = styled.textarea`
   width: 100%;
   height: 10em;
+
+  outline: none;
+  border: none;
+
+  font-size: 1.1rem;
+
+  resize: none;
 `;
 
 export const TextArea = TextAreaInner;

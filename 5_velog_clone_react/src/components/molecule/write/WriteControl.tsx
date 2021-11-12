@@ -1,3 +1,4 @@
+import { MdArrowBack } from "react-icons/md";
 import { useNavigate } from "react-router";
 import styled from "styled-components";
 import { Button } from "../../atom/Button";
@@ -14,11 +15,16 @@ export function WriteControl(props: WriteControlProps) {
   return (
     <WriteControlBox>
       <div>
-        <Button onClick={() => navigate("/")}>나가기</Button>
+        <Button variant="transparent" onClick={() => navigate("/")}>
+          <MdArrowBack />
+          나가기
+        </Button>
       </div>
       <div>
         <Button>임시저장</Button>
-        <Button onClick={onSubmit}>출간하기</Button>
+        <Button variant="success" onClick={onSubmit}>
+          출간하기
+        </Button>
       </div>
     </WriteControlBox>
   );
@@ -27,8 +33,18 @@ export function WriteControl(props: WriteControlProps) {
 const WriteControlBox = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px;
+  height: 4rem;
+
+  padding: 0 0.7rem;
 
   & > div {
     display: flex;
+  }
+
+  & > div > *:not(:last-child) {
+    margin-right: 0.5em;
   }
 `;

@@ -46,11 +46,36 @@ export function TagInput(props: TagInputProps) {
 
 const TagInputBox = styled.div`
   display: flex;
+  align-items: center;
+  height: 2rem;
+
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 `;
 
 const TagInputInner = styled.input`
   display: block;
   flex-grow: 1;
+
+  font-size: inherit;
+
+  outline: none;
+  border: none;
 `;
 
-const TagInputButton = styled.button``;
+const TagInputButton = styled.button`
+  font-size: 1rem;
+
+  margin-right: 0.2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 2em;
+
+  border: none;
+  border-radius: 1rem;
+
+  background-color: #f1f3f5;
+  color: #0ca678;
+
+  cursor: pointer;
+`;
