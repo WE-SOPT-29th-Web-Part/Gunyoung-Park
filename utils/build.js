@@ -28,6 +28,10 @@ const BUILD_TARGETS = [
       REACT_APP_API_MODE: "MEMORY",
     },
   },
+  {
+    name: "6_todo_list_react",
+    type: "react",
+  },
 ];
 
 const rootPath = process.cwd();
