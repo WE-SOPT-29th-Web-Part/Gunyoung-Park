@@ -24,6 +24,9 @@ const BUILD_TARGETS = [
   {
     name: "5_velog_clone_react",
     type: "react",
+    env: {
+      REACT_APP_API_MODE: "MEMORY",
+    },
   },
 ];
 
@@ -37,12 +40,17 @@ async function main() {
   fs.mkdirSync(distPath, { recursive: true });
 
   for (const target of BUILD_TARGETS) {
-    console.log(`\n\n### Building ${target.name}... ###\n\n`);
+    console.log(`\n# Building ${target.name}...`);
 
     const workingDirectory = path.join(rootPath, target.name);
 
     if (!fs.existsSync(workingDirectory)) {
-      throw new Error(`Project name "${target.name}" was not found.`);
+      console.error(`Project name "${target.name}" was not found.`);
+      continue;
+    }
+
+    if (target.env) {
+      setEnv(target.env);
     }
 
     if (target.type === "static") {
@@ -52,19 +60,12 @@ async function main() {
       );
     } else if (target.type === "react") {
       if (!fs.existsSync(path.join(workingDirectory, "package.json"))) {
-        console.log(
-          `# INFO # package.json does not exists in ${workingDirectory}.`
-        );
+        console.log("package.json does not exists.");
         continue;
       }
 
-      console.log("# Installing Dependencies...");
       await runCommand("yarn install", workingDirectory);
-
-      console.log("# Building React Project...");
       await runCommand("yarn build", workingDirectory);
-
-      console.log("# Copying Build Output...");
       const outputPath = path.join(workingDirectory, "build");
       await copy(outputPath, path.join(distPath, target.name));
     }
@@ -110,7 +111,9 @@ function rmrf(path) {
   });
 }
 
-main().catch((e) => {
-  console.error(`\n\n### Critical Error Raised ###\ne.message`);
-  process.exit(-1);
-});
+function setEnv(envs) {
+  for (const key in envs) {
+    process.env[key] = envs[key];
+  }
+}
+main();
