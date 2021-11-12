@@ -8,7 +8,7 @@ export function TagView(props: TagViewProps) {
   return (
     <TagViewBox>
       {props.tags.map((tag) => (
-        <TagButton>{tag}</TagButton>
+        <TagButton key={tag}>{tag}</TagButton>
       ))}
     </TagViewBox>
   );

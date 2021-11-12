@@ -15,8 +15,8 @@ export function Articles() {
 
   return (
     <div>
-      {articles.map((article) => (
-        <ArticlePreview article={article} />
+      {articles.map((article, idx) => (
+        <ArticlePreview article={article} key={idx} />
       ))}
     </div>
   );
