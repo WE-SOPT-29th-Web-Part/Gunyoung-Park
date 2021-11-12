@@ -5,25 +5,28 @@ const { ncp } = require("ncp");
 const rimraf = require("rimraf");
 
 const BUILD_TARGETS = [
-  {
-    name: "1_todolist",
-    type: "static",
-  },
-  {
-    name: "2_velog_clone",
-    type: "static",
-  },
-  {
-    name: "3_dday_calc",
-    type: "react",
-  },
-  {
-    name: "4_github_profile_finder",
-    type: "react",
-  },
+  // {
+  //   name: "1_todolist",
+  //   type: "static",
+  // },
+  // {
+  //   name: "2_velog_clone",
+  //   type: "static",
+  // },
+  // {
+  //   name: "3_dday_calc",
+  //   type: "react",
+  // },
+  // {
+  //   name: "4_github_profile_finder",
+  //   type: "react",
+  // },
   {
     name: "5_velog_clone_react",
     type: "react",
+    env: {
+      REACT_APP_API_MODE: "MEMORY",
+    },
   },
 ];
 
@@ -44,6 +47,10 @@ async function main() {
     if (!fs.existsSync(workingDirectory)) {
       console.error(`Project name "${target.name}" was not found.`);
       continue;
+    }
+
+    if (target.env) {
+      setEnv(target.env);
     }
 
     if (target.type === "static") {
@@ -104,4 +111,9 @@ function rmrf(path) {
   });
 }
 
+function setEnv(envs) {
+  for (const key in envs) {
+    process.env[key] = envs[key];
+  }
+}
 main();
