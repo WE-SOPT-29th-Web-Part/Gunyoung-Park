@@ -11,8 +11,10 @@ export function TodoListControl(props: TodoListControlProps) {
   const [input, setInput] = useState("");
 
   function submitValue() {
-    onAdd(input);
-    setInput("");
+    if (input !== "") {
+      onAdd(input);
+      setInput("");
+    }
   }
 
   return (
