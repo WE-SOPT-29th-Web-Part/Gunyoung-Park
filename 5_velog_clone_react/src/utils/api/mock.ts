@@ -8,9 +8,16 @@ export class MockApiService implements ApiService {
     return this.articles.map((article) => ({ ...article }));
   }
 
-  async createArticle(article: Omit<Article, "author">): Promise<void> {
+  async createArticle(
+    article: Omit<Article, "author" | "timestamp">
+  ): Promise<void> {
     await sleep(789);
-    this.articles.push({ ...article, author: "Tekiter" });
+
+    this.articles.push({
+      ...article,
+      author: "Tekiter",
+      timestamp: new Date(),
+    });
     console.log("Articles: ", this.articles);
   }
 }

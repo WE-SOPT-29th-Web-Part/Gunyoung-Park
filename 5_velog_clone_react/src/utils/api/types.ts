@@ -4,9 +4,10 @@ export interface Article {
   summary: string;
   author: string;
   tags: string[];
+  timestamp: Date;
 }
 
 export interface ApiService {
   getArticles(): Promise<Article[]>;
-  createArticle(article: Omit<Article, "author">): Promise<void>;
+  createArticle(article: Omit<Article, "author" | "timestamp">): Promise<void>;
 }

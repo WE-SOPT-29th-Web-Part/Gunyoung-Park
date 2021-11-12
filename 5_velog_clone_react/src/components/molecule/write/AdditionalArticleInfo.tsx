@@ -15,6 +15,7 @@ export function AdditionalArticleInfo(props: AdditionalArticleInfoProps) {
     <InfoBox>
       <InfoBoxInner>
         <Title>포스트 미리보기</Title>
+        <input type="file" />
         <TextAreaLimited
           value={props.article.summary}
           onChange={(e) => props.onChange("summary", e.target.value)}
@@ -48,12 +49,14 @@ const InfoBoxInner = styled.div`
   display: flex;
   flex-direction: column;
   width: 35rem;
+
+  & > *:not(:last-child) {
+    margin-bottom: 0.7em;
+  }
 `;
 
 const Title = styled.h2`
   font-size: 1.3rem;
-
-  margin-bottom: 0.3em;
 `;
 
 const ControlBox = styled.div`

@@ -6,9 +6,10 @@ export interface Article {
   content: string;
   tags: string[];
   author: string;
+  timestamp: Date;
 }
 
-export type ArticleToWrite = Omit<Article, "author">;
+export type ArticleToWrite = Omit<Article, "author" | "timestamp">;
 
 export interface ArticleChanger {
   <K extends keyof ArticleToWrite>(name: K, val: ArticleToWrite[K]): void;

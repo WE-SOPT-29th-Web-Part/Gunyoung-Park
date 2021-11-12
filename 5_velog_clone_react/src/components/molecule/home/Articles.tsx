@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { useArticleSummaries } from "../../../utils/api/hook";
 import { ArticlePreview } from "../../atom/ArticlePreview";
 
@@ -22,8 +23,13 @@ export function Articles() {
 }
 
 function NoResult() {
-  return <div>게시글이 없습니다.</div>;
+  return <NoResultBox>게시글이 없습니다.</NoResultBox>;
 }
+
+const NoResultBox = styled.div`
+  font-size: 1.5em;
+  color: lightgray;
+`;
 
 function Loading() {
   return <div>로딩중</div>;

@@ -24,6 +24,10 @@ export const IconButton = styled.button`
   height: 2em;
   width: 2em;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   border-radius: 50%;
   border: none;
   background-color: transparent;

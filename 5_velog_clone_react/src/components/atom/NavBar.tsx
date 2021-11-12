@@ -25,4 +25,9 @@ const NavBarBox = styled.nav`
 
 const NavBarInner = styled.div`
   display: flex;
+  align-items: center;
+
+  & > *:not(:last-child) {
+    margin-right: 0.7em;
+  }
 `;
