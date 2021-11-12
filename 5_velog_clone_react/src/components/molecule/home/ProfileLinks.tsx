@@ -35,6 +35,8 @@ export function ProfileLinks() {
 const LinksBox = styled.div`
   display: flex;
 
+  margin: 1em 0;
+
   & > *:not(:last-child) {
     margin-right: 0.7em;
   }

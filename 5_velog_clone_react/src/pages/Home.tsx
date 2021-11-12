@@ -1,17 +1,14 @@
 import { Outlet } from "react-router";
-import { ProfileSection } from "../components/molecule/profile/ProfileSection";
 import { TopBar } from "../components/molecule/common/TopBar";
-import { ProfileNav } from "../components/molecule/profile/ProfileNav";
-import { ProfileLinks } from "../components/molecule/home/ProfileLinks";
+import { HomeLayout } from "../components/layout/HomeLayout";
+import { Profile } from "../components/molecule/profile/Profile";
 
 export function Home() {
   return (
-    <div>
-      <TopBar />
-      <ProfileSection />
-      <ProfileLinks />
-      <ProfileNav />
-      <Outlet />
-    </div>
+    <HomeLayout
+      topBar={<TopBar />}
+      profileArea={<Profile />}
+      contents={<Outlet />}
+    />
   );
 }
