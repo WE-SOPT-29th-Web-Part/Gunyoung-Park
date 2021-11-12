@@ -26,6 +26,7 @@ const BUILD_TARGETS = [
     type: "react",
     env: {
       REACT_APP_API_MODE: "MEMORY",
+      REACT_APP_ROUTER_MODE: "HASH",
     },
   },
 ];
