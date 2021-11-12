@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Article } from "../article";
-import { MockApiService } from "./mock";
+import { getAPI } from "./factory";
 import { ApiService } from "./types";
 
-const api: ApiService = new MockApiService();
+const api: ApiService = getAPI();
 
 interface ArticleData {
   title: string;
