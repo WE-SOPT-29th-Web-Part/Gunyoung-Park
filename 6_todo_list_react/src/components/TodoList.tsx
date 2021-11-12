@@ -17,6 +17,12 @@ export function TodoList(props: TodoListProps) {
     setList((list) => [...list, { content }]);
   }
 
+  function removeTodo(idx: number) {
+    const newList = [...list];
+    newList.splice(idx, 1);
+    setList(newList);
+  }
+
   return (
     <TodoListBox>
       <TodoListLabel>{props.label}</TodoListLabel>
@@ -24,7 +30,9 @@ export function TodoList(props: TodoListProps) {
         {list.map((item, idx) => (
           <TodoListItem key={idx}>
             {item.content}
-            <TodoListItemDelete>X</TodoListItemDelete>
+            <TodoListItemDelete onClick={() => removeTodo(idx)}>
+              X
+            </TodoListItemDelete>
           </TodoListItem>
         ))}
       </TodoListItemContainer>
