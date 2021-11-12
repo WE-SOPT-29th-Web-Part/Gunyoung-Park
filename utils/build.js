@@ -29,6 +29,10 @@ const BUILD_TARGETS = [
       REACT_APP_ROUTER_MODE: "HASH",
     },
   },
+  {
+    name: "6_todo_list_react",
+    type: "react",
+  },
 ];
 
 const rootPath = process.cwd();
