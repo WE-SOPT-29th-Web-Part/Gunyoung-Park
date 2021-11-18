@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled, { css } from "styled-components";
+import { Fade } from "./components/common/Fade";
 
 import { DatePicker } from "./components/DatePicker";
 import { Footer } from "./components/Footer";
@@ -29,16 +30,18 @@ function App() {
   const [currentDate, setCurrentDate] = useState(new Date());
 
   return (
-    <Container>
-      <Header />
-      <DatePicker
-        date={currentDate}
-        onDateChange={(date) => setCurrentDate(date)}
-      />
-      <SubHeader />
-      <Result currentDate={currentDate} />
-      <Footer />
-    </Container>
+    <Fade duration={1.6}>
+      <Container>
+        <Header />
+        <DatePicker
+          date={currentDate}
+          onDateChange={(date) => setCurrentDate(date)}
+        />
+        <SubHeader />
+        <Result currentDate={currentDate} />
+        <Footer />
+      </Container>
+    </Fade>
   );
 }
 
