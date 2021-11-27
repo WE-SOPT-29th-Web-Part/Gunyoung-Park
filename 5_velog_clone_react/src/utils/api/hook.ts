@@ -10,6 +10,7 @@ interface ArticleData {
   content: string;
   summary: string;
   tags: string[];
+  thumbnail: string;
 }
 
 export function useWriteArticle() {

@@ -6,7 +6,8 @@ export interface Article {
   content: string;
   tags: string[];
   author: string;
-  timestamp: Date;
+  timestamp: string;
+  thumbnail: string;
 }
 
 export type ArticleToWrite = Omit<Article, "author" | "timestamp">;
@@ -21,6 +22,7 @@ export function useArticle() {
     summary: "",
     content: "",
     tags: [],
+    thumbnail: "",
   });
 
   function updateField<K extends keyof ArticleToWrite>(

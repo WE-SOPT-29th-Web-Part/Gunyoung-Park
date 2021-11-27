@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import { ApiService, Article } from "./types";
 
 export class MockApiService implements ApiService {
@@ -16,7 +17,7 @@ export class MockApiService implements ApiService {
     this.articles.push({
       ...article,
       author: "Tekiter",
-      timestamp: new Date(),
+      timestamp: format(new Date(), "yyyy년 MM월 dd일"),
     });
     console.log("Articles: ", this.articles);
   }

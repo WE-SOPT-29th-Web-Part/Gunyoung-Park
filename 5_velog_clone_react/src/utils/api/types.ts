@@ -4,7 +4,8 @@ export interface Article {
   summary: string;
   author: string;
   tags: string[];
-  timestamp: Date;
+  thumbnail: string;
+  timestamp: string;
 }
 
 export interface ApiService {
