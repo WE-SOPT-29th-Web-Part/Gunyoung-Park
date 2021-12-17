@@ -3,7 +3,7 @@ import { Article } from "../article";
 import { getAPI } from "./factory";
 import { ApiService } from "./types";
 
-const api: ApiService = getAPI();
+export const api: ApiService = getAPI();
 
 interface ArticleData {
   title: string;
@@ -21,6 +21,14 @@ export function useWriteArticle() {
   return {
     request,
   };
+}
+
+export function useEditArticle() {
+  async function request(id: string, data: ArticleData) {
+    await api.modifyArticle(id, { ...data, id });
+  }
+
+  return { request };
 }
 
 export function useArticleSummaries() {

@@ -78,7 +78,13 @@ export class RealApiService implements ApiService {
       tags: string[];
     }
 
-    await this.request.patch<ServerRequest>(`article/${articleId}`);
+    await this.request.patch<ServerRequest>(`article/${articleId}`, {
+      title: article.title,
+      body: article.content,
+      summary: article.summary,
+      tags: article.tags,
+      thumbnail: article.thumbnail,
+    });
   }
 
   async createArticle(
