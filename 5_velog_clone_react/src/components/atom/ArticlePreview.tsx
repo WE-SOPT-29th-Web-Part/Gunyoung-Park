@@ -13,6 +13,10 @@ export function ArticlePreview(props: ArticlePreviewProps) {
   return (
     <ArticlePreviewBox>
       <LinkArea to={`/article/${article.id}`}>
+        {article.thumbnail !== "" ? (
+          <Thumbnail src={article.thumbnail} />
+        ) : null}
+
         <Title>{article.title}</Title>
         <Summary>{article.summary}</Summary>
         <TagView tags={article.tags} />
@@ -35,6 +39,10 @@ const LinkArea = styled(Link)`
 
   color: inherit;
   text-decoration: inherit;
+`;
+
+const Thumbnail = styled.img`
+  max-height: 8rem;
 `;
 
 const Title = styled.h2`
