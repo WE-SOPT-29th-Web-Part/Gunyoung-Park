@@ -1,7 +1,20 @@
 import { format } from "date-fns";
-import { ApiService, Article } from "./types";
+import { ApiService, Article, ImageUploadResponse } from "./types";
 
 export class MockApiService implements ApiService {
+  getArticle(articleId: string): Promise<Article> {
+    throw new Error("Method not implemented.");
+  }
+  deleteArticle(articleId: string): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  modifyArticle(
+    articleId: string,
+    article: Omit<Article, "author" | "timestamp">
+  ): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+
   articles: Article[] = [];
 
   async getArticles(): Promise<Article[]> {
@@ -20,6 +33,9 @@ export class MockApiService implements ApiService {
       timestamp: format(new Date(), "yyyy년 MM월 dd일"),
     });
     console.log("Articles: ", this.articles);
+  }
+  uploadImage(file: File): Promise<ImageUploadResponse> {
+    throw new Error("Method not implemented.");
   }
 }
 

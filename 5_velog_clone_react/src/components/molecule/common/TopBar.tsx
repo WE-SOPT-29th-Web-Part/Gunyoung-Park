@@ -5,7 +5,7 @@ import { NavBar } from "../../atom/NavBar";
 import { MdSearch } from "react-icons/md";
 import { ImageDropdown } from "../../atom/ImageDrodown";
 import { useUserInfo } from "../../../states/user";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export function TopBar() {
   const userInfo = useUserInfo();
@@ -14,7 +14,11 @@ export function TopBar() {
 
   return (
     <NavBar
-      left={<Logo>telog</Logo>}
+      left={
+        <NoStyleLink to="/">
+          <Logo>telog</Logo>
+        </NoStyleLink>
+      }
       right={
         <>
           <IconButton>
@@ -32,4 +36,9 @@ export function TopBar() {
 
 const Logo = styled.h1`
   margin: 0;
+`;
+
+const NoStyleLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
 `;

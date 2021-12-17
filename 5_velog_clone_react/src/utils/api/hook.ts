@@ -38,3 +38,25 @@ export function useArticleSummaries() {
 
   return { data, loading };
 }
+
+export function useArticleView(articleId: string) {
+  const [data, setData] = useState<Article>();
+
+  useEffect(() => {
+    (async () => {
+      const data = await api.getArticle(articleId);
+      setData(data);
+    })();
+  }, [articleId]);
+
+  return { data };
+}
+
+export function useUploadImage() {
+  async function request(file: File) {
+    const res = await api.uploadImage(file);
+    return res.url;
+  }
+
+  return { request };
+}

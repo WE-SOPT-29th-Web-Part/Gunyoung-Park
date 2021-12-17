@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export interface Article {
+  id: string;
   title: string;
   summary: string;
   content: string;
@@ -10,7 +11,7 @@ export interface Article {
   thumbnail: string;
 }
 
-export type ArticleToWrite = Omit<Article, "author" | "timestamp">;
+export type ArticleToWrite = Omit<Article, "author" | "timestamp" | "id">;
 
 export interface ArticleChanger {
   <K extends keyof ArticleToWrite>(name: K, val: ArticleToWrite[K]): void;
