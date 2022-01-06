@@ -1,15 +1,17 @@
 import { useState } from "react";
 
 export interface Article {
+  id: string;
   title: string;
   summary: string;
   content: string;
   tags: string[];
   author: string;
-  timestamp: Date;
+  timestamp: string;
+  thumbnail: string;
 }
 
-export type ArticleToWrite = Omit<Article, "author" | "timestamp">;
+export type ArticleToWrite = Omit<Article, "author" | "timestamp" | "id">;
 
 export interface ArticleChanger {
   <K extends keyof ArticleToWrite>(name: K, val: ArticleToWrite[K]): void;
@@ -21,6 +23,7 @@ export function useArticle() {
     summary: "",
     content: "",
     tags: [],
+    thumbnail: "",
   });
 
   function updateField<K extends keyof ArticleToWrite>(

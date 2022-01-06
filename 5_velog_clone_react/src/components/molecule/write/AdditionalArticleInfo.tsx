@@ -1,6 +1,9 @@
+import { useRef } from "react";
 import styled from "styled-components";
+import { useUploadImage } from "../../../utils/api/hook";
 import { ArticleToWrite, ArticleChanger } from "../../../utils/article";
 import { Button } from "../../atom/Button";
+import { Image } from "../../atom/Image";
 import { TextAreaLimited } from "../../atom/TextArea";
 
 interface AdditionalArticleInfoProps {
@@ -11,11 +14,27 @@ interface AdditionalArticleInfoProps {
 }
 
 export function AdditionalArticleInfo(props: AdditionalArticleInfoProps) {
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const uploadImage = useUploadImage();
+
+  async function handleFileSelect() {
+    const selectedFiles = fileInputRef.current!.files;
+
+    if (selectedFiles?.length && selectedFiles.length > 0) {
+      const selected = selectedFiles[0] as File;
+
+      const url = await uploadImage.request(selected);
+      props.onChange("thumbnail", url);
+    }
+  }
+
   return (
     <InfoBox>
       <InfoBoxInner>
         <Title>포스트 미리보기</Title>
-        <input type="file" />
+        <input type="file" ref={fileInputRef} onChange={handleFileSelect} />
+        <Image src={props.article.thumbnail} />
         <TextAreaLimited
           value={props.article.summary}
           onChange={(e) => props.onChange("summary", e.target.value)}

@@ -1,7 +1,7 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Article } from "../../utils/article";
 import { TagView } from "./TagView";
-import { format } from "date-fns";
 
 interface ArticlePreviewProps {
   article: Article;
@@ -12,10 +12,16 @@ export function ArticlePreview(props: ArticlePreviewProps) {
 
   return (
     <ArticlePreviewBox>
-      <Title>{article.title}</Title>
-      <Summary>{article.summary}</Summary>
-      <TagView tags={article.tags} />
-      <DatePresent>{formatDate(article.timestamp)}</DatePresent>
+      <LinkArea to={`/article/${article.id}`}>
+        {article.thumbnail !== "" ? (
+          <Thumbnail src={article.thumbnail} />
+        ) : null}
+
+        <Title>{article.title}</Title>
+        <Summary>{article.summary}</Summary>
+        <TagView tags={article.tags} />
+        <DatePresent>{article.timestamp}</DatePresent>
+      </LinkArea>
     </ArticlePreviewBox>
   );
 }
@@ -26,6 +32,17 @@ const ArticlePreviewBox = styled.div`
   &:not(:last-child) {
     border-bottom: 1px solid lightgray;
   }
+`;
+
+const LinkArea = styled(Link)`
+  display: block;
+
+  color: inherit;
+  text-decoration: inherit;
+`;
+
+const Thumbnail = styled.img`
+  max-height: 8rem;
 `;
 
 const Title = styled.h2`
@@ -40,7 +57,3 @@ const DatePresent = styled.p`
   margin-top: 0.7em;
   color: gray;
 `;
-
-function formatDate(date: Date): string {
-  return format(date, "yyyy년 MM월 dd일");
-}
